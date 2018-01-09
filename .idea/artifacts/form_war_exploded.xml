@@ -1,0 +1,61 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="form:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/form_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="form" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="module" name="antlr-2.7.5.jar" module-name="form" />
+          <element id="library" level="module" name="Artifact.jar" module-name="form" />
+          <element id="library" level="module" name="avalon-logkit-2.1.jar" module-name="form" />
+          <element id="library" level="module" name="com.springsource.com.ibatis-2.3.4.726.jar" module-name="form" />
+          <element id="library" level="module" name="com.springsource.net.sf.cglib-2.2.0.jar" module-name="form" />
+          <element id="library" level="module" name="com.springsource.org.aopalliance-1.0.0.jar" module-name="form" />
+          <element id="library" level="module" name="com.springsource.org.apache.commons.fileupload-1.2.0.jar" module-name="form" />
+          <element id="library" level="module" name="com.springsource.org.apache.commons.httpclient-3.1.0.jar" module-name="form" />
+          <element id="library" level="module" name="com.springsource.org.apache.commons.logging-1.1.1.jar" module-name="form" />
+          <element id="library" level="module" name="com.springsource.org.apache.log4j-1.2.15.jar" module-name="form" />
+          <element id="library" level="module" name="com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar" module-name="form" />
+          <element id="library" level="module" name="commons-collections-3.2.1.jar" module-name="form" />
+          <element id="library" level="module" name="commons-io-1.3.2.jar" module-name="form" />
+          <element id="library" level="module" name="commons-lang-2.4.jar" module-name="form" />
+          <element id="library" level="module" name="jackson-core-asl-1.9.11.jar" module-name="form" />
+          <element id="library" level="module" name="jackson-mapper-asl-1.9.11.jar" module-name="form" />
+          <element id="library" level="module" name="jdom-1.0.jar" module-name="form" />
+          <element id="library" level="module" name="mybatis-3.2.2.jar" module-name="form" />
+          <element id="library" level="module" name="mybatis-spring-1.2.2.jar" module-name="form" />
+          <element id="library" level="module" name="mysql-connector-java-5.0.4-bin.jar" module-name="form" />
+          <element id="library" level="module" name="org.springframework.aop-3.1.0.RELEASE.jar" module-name="form" />
+          <element id="library" level="module" name="org.springframework.asm-3.1.0.RELEASE.jar" module-name="form" />
+          <element id="library" level="module" name="org.springframework.aspects-3.1.0.RELEASE.jar" module-name="form" />
+          <element id="library" level="module" name="org.springframework.beans-3.1.0.RELEASE.jar" module-name="form" />
+          <element id="library" level="module" name="org.springframework.context-3.1.0.RELEASE.jar" module-name="form" />
+          <element id="library" level="module" name="org.springframework.context.support-3.1.0.RELEASE.jar" module-name="form" />
+          <element id="library" level="module" name="org.springframework.core-3.1.0.RELEASE.jar" module-name="form" />
+          <element id="library" level="module" name="org.springframework.expression-3.1.0.RELEASE.jar" module-name="form" />
+          <element id="library" level="module" name="org.springframework.instrument-3.1.0.RELEASE.jar" module-name="form" />
+          <element id="library" level="module" name="org.springframework.instrument.tomcat-3.1.0.RELEASE.jar" module-name="form" />
+          <element id="library" level="module" name="org.springframework.jdbc-3.1.0.RELEASE.jar" module-name="form" />
+          <element id="library" level="module" name="org.springframework.jms-3.1.0.RELEASE.jar" module-name="form" />
+          <element id="library" level="module" name="org.springframework.orm-3.1.0.RELEASE.jar" module-name="form" />
+          <element id="library" level="module" name="org.springframework.oxm-3.1.0.RELEASE.jar" module-name="form" />
+          <element id="library" level="module" name="org.springframework.test-3.1.0.RELEASE.jar" module-name="form" />
+          <element id="library" level="module" name="org.springframework.transaction-3.1.0.RELEASE.jar" module-name="form" />
+          <element id="library" level="module" name="org.springframework.web-3.1.0.RELEASE.jar" module-name="form" />
+          <element id="library" level="module" name="org.springframework.web.servlet-3.1.0.RELEASE.jar" module-name="form" />
+          <element id="library" level="module" name="oro-2.0.8.jar" module-name="form" />
+          <element id="library" level="module" name="persistence.jar" module-name="form" />
+          <element id="library" level="module" name="velocity-1.7.jar" module-name="form" />
+          <element id="library" level="module" name="werken-xpath-0.9.4.jar" module-name="form" />
+          <element id="library" level="module" name="pinyin4j-2.5.0.jar" module-name="form" />
+          <element id="library" level="module" name="java-json.jar" module-name="form" />
+          <element id="library" level="module" name="fastjson-1.2.37.jar" module-name="form" />
+          <element id="library" level="module" name="log4j-1.2.15.jar" module-name="form" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="form/web/Web" />
+    </root>
+  </artifact>
+</component>

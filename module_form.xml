@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_form" default="compile.module.form">
+  <dirname property="module.form.basedir" file="${ant.file.module_form}"/>
+  
+  <property name="module.jdk.home.form" value="${jdk.home.1.8}"/>
+  <property name="module.jdk.bin.form" value="${jdk.bin.1.8}"/>
+  <property name="module.jdk.classpath.form" value="jdk.classpath.1.8"/>
+  
+  <property name="compiler.args.form" value="-encoding UTF-8 -source 1.8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="form.output.dir" value="${module.form.basedir}/build/classes"/>
+  <property name="form.testoutput.dir" value="${module.form.basedir}/build/classes"/>
+  
+  <path id="form.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="form.module.production.classpath">
+    <path refid="${module.jdk.classpath.form}"/>
+    <pathelement location="${basedir}/lib/antlr-2.7.5.jar"/>
+    <pathelement location="${basedir}/lib/Artifact.jar"/>
+    <pathelement location="${basedir}/lib/avalon-logkit-2.1.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.com.ibatis-2.3.4.726.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.net.sf.cglib-2.2.0.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.aopalliance-1.0.0.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.apache.commons.fileupload-1.2.0.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.apache.commons.httpclient-3.1.0.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.apache.commons.logging-1.1.1.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.apache.log4j-1.2.15.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/commons-collections-3.2.1.jar"/>
+    <pathelement location="${basedir}/lib/commons-io-1.3.2.jar"/>
+    <pathelement location="${basedir}/lib/commons-lang-2.4.jar"/>
+    <pathelement location="${basedir}/lib/jackson-core-asl-1.9.11.jar"/>
+    <pathelement location="${basedir}/lib/jackson-mapper-asl-1.9.11.jar"/>
+    <pathelement location="${basedir}/lib/jdom-1.0.jar"/>
+    <pathelement location="${basedir}/lib/mybatis-3.2.2.jar"/>
+    <pathelement location="${basedir}/lib/mybatis-spring-1.2.2.jar"/>
+    <pathelement location="${basedir}/lib/mysql-connector-java-5.0.4-bin.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.aop-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.asm-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.aspects-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.beans-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.context-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.context.support-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.core-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.expression-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.instrument-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.instrument.tomcat-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.jdbc-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.jms-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.orm-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.oxm-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.test-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.transaction-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.web-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.web.servlet-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/oro-2.0.8.jar"/>
+    <pathelement location="${basedir}/lib/persistence.jar"/>
+    <pathelement location="${basedir}/lib/servletapi-2.3.jar"/>
+    <pathelement location="${basedir}/lib/velocity-1.7.jar"/>
+    <pathelement location="${basedir}/lib/werken-xpath-0.9.4.jar"/>
+    <pathelement location="${basedir}/lib/pinyin4j-2.5.0.jar"/>
+    <pathelement location="${basedir}/lib/java-json.jar"/>
+    <pathelement location="${basedir}/lib/fastjson-1.2.37.jar"/>
+    <pathelement location="${basedir}/lib/log4j-1.2.15.jar"/>
+    <path refid="library.antlr-2.7.5.classpath"/>
+  </path>
+  
+  <path id="form.runtime.production.module.classpath">
+    <pathelement location="${form.output.dir}"/>
+    <pathelement location="${basedir}/lib/antlr-2.7.5.jar"/>
+    <pathelement location="${basedir}/lib/Artifact.jar"/>
+    <pathelement location="${basedir}/lib/avalon-logkit-2.1.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.com.ibatis-2.3.4.726.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.net.sf.cglib-2.2.0.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.aopalliance-1.0.0.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.apache.commons.fileupload-1.2.0.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.apache.commons.httpclient-3.1.0.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.apache.commons.logging-1.1.1.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.apache.log4j-1.2.15.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/commons-collections-3.2.1.jar"/>
+    <pathelement location="${basedir}/lib/commons-io-1.3.2.jar"/>
+    <pathelement location="${basedir}/lib/commons-lang-2.4.jar"/>
+    <pathelement location="${basedir}/lib/jackson-core-asl-1.9.11.jar"/>
+    <pathelement location="${basedir}/lib/jackson-mapper-asl-1.9.11.jar"/>
+    <pathelement location="${basedir}/lib/jdom-1.0.jar"/>
+    <pathelement location="${basedir}/lib/mybatis-3.2.2.jar"/>
+    <pathelement location="${basedir}/lib/mybatis-spring-1.2.2.jar"/>
+    <pathelement location="${basedir}/lib/mysql-connector-java-5.0.4-bin.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.aop-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.asm-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.aspects-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.beans-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.context-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.context.support-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.core-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.expression-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.instrument-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.instrument.tomcat-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.jdbc-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.jms-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.orm-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.oxm-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.test-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.transaction-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.web-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.web.servlet-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/oro-2.0.8.jar"/>
+    <pathelement location="${basedir}/lib/persistence.jar"/>
+    <pathelement location="${basedir}/lib/servletapi-2.3.jar"/>
+    <pathelement location="${basedir}/lib/velocity-1.7.jar"/>
+    <pathelement location="${basedir}/lib/werken-xpath-0.9.4.jar"/>
+    <pathelement location="${basedir}/lib/pinyin4j-2.5.0.jar"/>
+    <pathelement location="${basedir}/lib/java-json.jar"/>
+    <pathelement location="${basedir}/lib/fastjson-1.2.37.jar"/>
+    <pathelement location="${basedir}/lib/log4j-1.2.15.jar"/>
+    <path refid="library.antlr-2.7.5.classpath"/>
+  </path>
+  
+  <path id="form.module.classpath">
+    <pathelement location="${form.output.dir}"/>
+    <path refid="${module.jdk.classpath.form}"/>
+    <pathelement location="${basedir}/lib/antlr-2.7.5.jar"/>
+    <pathelement location="${basedir}/lib/Artifact.jar"/>
+    <pathelement location="${basedir}/lib/avalon-logkit-2.1.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.com.ibatis-2.3.4.726.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.net.sf.cglib-2.2.0.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.aopalliance-1.0.0.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.apache.commons.fileupload-1.2.0.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.apache.commons.httpclient-3.1.0.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.apache.commons.logging-1.1.1.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.apache.log4j-1.2.15.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/commons-collections-3.2.1.jar"/>
+    <pathelement location="${basedir}/lib/commons-io-1.3.2.jar"/>
+    <pathelement location="${basedir}/lib/commons-lang-2.4.jar"/>
+    <pathelement location="${basedir}/lib/jackson-core-asl-1.9.11.jar"/>
+    <pathelement location="${basedir}/lib/jackson-mapper-asl-1.9.11.jar"/>
+    <pathelement location="${basedir}/lib/jdom-1.0.jar"/>
+    <pathelement location="${basedir}/lib/mybatis-3.2.2.jar"/>
+    <pathelement location="${basedir}/lib/mybatis-spring-1.2.2.jar"/>
+    <pathelement location="${basedir}/lib/mysql-connector-java-5.0.4-bin.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.aop-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.asm-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.aspects-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.beans-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.context-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.context.support-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.core-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.expression-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.instrument-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.instrument.tomcat-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.jdbc-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.jms-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.orm-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.oxm-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.test-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.transaction-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.web-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.web.servlet-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/oro-2.0.8.jar"/>
+    <pathelement location="${basedir}/lib/persistence.jar"/>
+    <pathelement location="${basedir}/lib/servletapi-2.3.jar"/>
+    <pathelement location="${basedir}/lib/velocity-1.7.jar"/>
+    <pathelement location="${basedir}/lib/werken-xpath-0.9.4.jar"/>
+    <pathelement location="${basedir}/lib/pinyin4j-2.5.0.jar"/>
+    <pathelement location="${basedir}/lib/java-json.jar"/>
+    <pathelement location="${basedir}/lib/fastjson-1.2.37.jar"/>
+    <pathelement location="${basedir}/lib/log4j-1.2.15.jar"/>
+    <path refid="library.antlr-2.7.5.classpath"/>
+  </path>
+  
+  <path id="form.runtime.module.classpath">
+    <pathelement location="${form.output.dir}"/>
+    <pathelement location="${basedir}/lib/antlr-2.7.5.jar"/>
+    <pathelement location="${basedir}/lib/Artifact.jar"/>
+    <pathelement location="${basedir}/lib/avalon-logkit-2.1.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.com.ibatis-2.3.4.726.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.net.sf.cglib-2.2.0.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.aopalliance-1.0.0.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.apache.commons.fileupload-1.2.0.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.apache.commons.httpclient-3.1.0.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.apache.commons.logging-1.1.1.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.apache.log4j-1.2.15.jar"/>
+    <pathelement location="${basedir}/lib/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/commons-collections-3.2.1.jar"/>
+    <pathelement location="${basedir}/lib/commons-io-1.3.2.jar"/>
+    <pathelement location="${basedir}/lib/commons-lang-2.4.jar"/>
+    <pathelement location="${basedir}/lib/jackson-core-asl-1.9.11.jar"/>
+    <pathelement location="${basedir}/lib/jackson-mapper-asl-1.9.11.jar"/>
+    <pathelement location="${basedir}/lib/jdom-1.0.jar"/>
+    <pathelement location="${basedir}/lib/mybatis-3.2.2.jar"/>
+    <pathelement location="${basedir}/lib/mybatis-spring-1.2.2.jar"/>
+    <pathelement location="${basedir}/lib/mysql-connector-java-5.0.4-bin.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.aop-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.asm-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.aspects-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.beans-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.context-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.context.support-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.core-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.expression-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.instrument-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.instrument.tomcat-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.jdbc-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.jms-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.orm-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.oxm-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.test-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.transaction-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.web-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/org.springframework.web.servlet-3.1.0.RELEASE.jar"/>
+    <pathelement location="${basedir}/lib/oro-2.0.8.jar"/>
+    <pathelement location="${basedir}/lib/persistence.jar"/>
+    <pathelement location="${basedir}/lib/servletapi-2.3.jar"/>
+    <pathelement location="${basedir}/lib/velocity-1.7.jar"/>
+    <pathelement location="${basedir}/lib/werken-xpath-0.9.4.jar"/>
+    <pathelement location="${basedir}/lib/pinyin4j-2.5.0.jar"/>
+    <pathelement location="${basedir}/lib/java-json.jar"/>
+    <pathelement location="${basedir}/lib/fastjson-1.2.37.jar"/>
+    <pathelement location="${basedir}/lib/log4j-1.2.15.jar"/>
+    <path refid="library.antlr-2.7.5.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.form">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.form">
+    <patternset refid="excluded.from.module.form"/>
+  </patternset>
+  
+  <path id="form.module.sourcepath">
+    <dirset dir="${module.form.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.form" depends="compile.module.form.production,compile.module.form.tests" description="Compile module form"/>
+  
+  <target name="compile.module.form.production" depends="register.custom.compilers" description="Compile module form; production classes">
+    <mkdir dir="${form.output.dir}"/>
+    <javac2 destdir="${form.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.form}/javac">
+      <compilerarg line="${compiler.args.form}"/>
+      <bootclasspath refid="form.module.bootclasspath"/>
+      <classpath refid="form.module.production.classpath"/>
+      <src refid="form.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.form"/>
+    </javac2>
+    
+    <copy todir="${form.output.dir}">
+      <fileset dir="${module.form.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.form.tests" depends="register.custom.compilers,compile.module.form.production" description="compile module form; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.form" description="cleanup module">
+    <delete dir="${form.output.dir}"/>
+    <delete dir="${form.testoutput.dir}"/>
+  </target>
+</project>

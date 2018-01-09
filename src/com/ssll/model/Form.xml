@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssll.mappers.FormMapper">
+	<resultMap type="Form" id="formResultMap">
+		<id column="id" property="id"/>
+		<result column="form_id" property="form_id"/>
+		<result column="tag_id" property="tag_id"/>
+		<result column="tag_name" property="tag_name"/>
+		<result column="label_name" property="label_name"/>
+		<result column="multi_value" property="multi_value"/>
+		<result column="paixu" property="paixu"/>
+		<result column="default_value" property="default_value"/>
+		<result column="check_rule" property="check_rule"/>
+		<result column="status" property="status"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="Form">
+		select * from form where id=#{id}
+	</select>
+	<select id="select" resultMap="formResultMap">
+		select * from form
+	</select>
+	<select id="selectbyid" resultMap="formResultMap" parameterType="int">
+		select * from form where form_id=#{form_id}
+	</select>
+	<insert id="insert" parameterType="Form">
+		insert into form(form_id,tag_id,tag_name,label_name,multi_value,paixu,default_value,check_rule,status) values(#{form_id},#{tag_id},#{tag_name},#{label_name},#{multi_value},#{paixu},#{default_value},#{check_rule},1)
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from form where id=#{id}
+	</delete>
+	<update id="update" parameterType="Form">
+		update form set form_id=#{form_id},tag_id=#{tag_id},tag_name=#{tag_name},label_name=#{label_name},multi_value=#{multi_value},paixu=#{paixu},default_value=#{default_value},check_rule=#{check_rule},status=#{status} where id=#{id}
+	</update>
+</mapper>

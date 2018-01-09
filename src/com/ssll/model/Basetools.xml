@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssll.mappers.BaseMapper">
+    <resultMap type="Allform" id="allformResultMap">
+		<id column="id" property="id"/>
+		<result column="form_name" property="form_name"/>
+		<result column="name_paraphrase" property="name_paraphrase"/>
+		<result column="version" property="version"/>
+		<result column="creation_date" property="creation_date"/>
+	</resultMap>
+	<insert id="insertAllform" parameterType="Allform" useGeneratedKeys="true" keyProperty="id">
+		insert into allform(form_name,name_paraphrase) values(#{form_name},#{name_paraphrase})
+	</insert>
+	<update id="createSpecificTable" parameterType="String">
+		create table if not exists ${_parameter}(
+		   id int primary key AUTO_INCREMENT,
+		   allform_id int(5) comment 'allform表中的id',
+		   creation_date timestamp not null default CURRENT_TIMESTAMP comment '录入时间',
+		   sole_id int(6) comment '唯一识别id',
+		   writer_id int(6) comment '录入人员ID',
+		   status int(1) comment '状态标示，1为存在0为删除'
+		)
+	</update>
+	<update id="createFields" parameterType="Map">
+		ALTER TABLE ${tableName} ADD ${columnName} ${dataType} comment '${note}'
+	</update>
+	<insert id="insertdata" parameterType="String">
+		insert into ${_parameter}
+	</insert>
+</mapper>

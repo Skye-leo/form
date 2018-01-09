@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssll.mappers.FormsMapper">
+	<resultMap type="Forms" id="formsResultMap">
+		<id column="id" property="id"/>
+		<result column="form_id" property="form_id"/>
+		<result column="form_name" property="form_name"/>
+		<result column="fields" property="fields"/>
+		<result column="status" property="status"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="Forms">
+		select * from forms where form_id=#{id}
+	</select>
+	<select id="select" resultMap="formsResultMap">
+		select * from forms
+	</select>
+	<insert id="insert" parameterType="Forms">
+		insert into forms(form_name,fields,status,form_id) values(#{form_name},#{fields},1,#{form_id})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from forms where id=#{id}
+	</delete>
+	<update id="update" parameterType="Forms">
+		update forms set fields=#{fields} where id=#{id}
+	</update>
+</mapper>
